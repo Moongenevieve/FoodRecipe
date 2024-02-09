@@ -27,25 +27,43 @@ class MyApp extends StatelessWidget {
            icon: Icon(Icons.more_horiz)),
             ],
           ),
-          body: const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Topicsection(topic: "How to make french Toast"),
-                  ImageSection(
+          body: const SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    
+                    Topicsection(topic: "How to make french Toast"),
+                    SizedBox(
+                        height: 15,
+                      ),
+                   ImageSection(
                       image: "assets/images/mainimage.png",
                       playimage: "assets/images/Playbutton.png",
-                    ),      
+                    ),
+                            
+                            
                     Ratingsection(
                       rating: 4.5,
                       review: "(300 reviews)",
                     ),
-                 
-                 ],
+                    Authordetailssection(
+                      image: "assets/images/user.png",
+                      name: "Kimmy Bella",
+                      location: "Winchester, Manch",
+                      image_location: "assets/images/Location.png",
+                      ),
+                    
+                      Ingredientsection(
+                        text_main: "Ingredients",
+                        text_sub: "5 items",
+                      ),
+                
+                      ],
+                ),
               ),
             ),
-          ),
+        
 
       ),
       
@@ -53,6 +71,7 @@ class MyApp extends StatelessWidget {
         
   }
 }
+
 
 class Topicsection extends StatelessWidget {
   const Topicsection({
@@ -73,7 +92,6 @@ class Topicsection extends StatelessWidget {
     );
   }
 }
-
 
 
 class ImageSection extends StatelessWidget {
@@ -158,4 +176,138 @@ class Ratingsection extends StatelessWidget {
     
   }
 }
+
+
+class Authordetailssection extends StatelessWidget {
+  const Authordetailssection(
+      {super.key,
+      required this.image,
+      required this.name,
+      required this.location,
+      required this.image_location});
+
+  final String image;
+  final String name;
+  final String location;
+  final String image_location;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        children: [
+          ClipOval( 
+                  child: Image.asset(
+                        image,
+                        width: 40,
+                        height: 40,
+                        fit: BoxFit.cover,
+                      ),
+                      ),
+               
+          Column(
+            
+              children: [
+                Text(
+                  name,
+                  style: const TextStyle(
+                   fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    ),
+                ),
+      
+                 Padding(
+                   padding: const EdgeInsets.only(left:24.0),
+                   child: Row (children: [
+                       Image.asset(
+                        image_location,
+                        // width: 20,
+                        // height: 20,
+                        fit: BoxFit.contain,
+                              ),
+                             
+                                   Text(
+                          location,
+                          style: const TextStyle(
+                            
+                        fontWeight: FontWeight.normal, 
+                        fontSize: 12,
+                        color: Colors.grey,
+                            ),
+                        ),
+                             
+                    ],
+                    
+                    ),
+                 ),
+      
+              ],
+          
+          ),
+        const Spacer(),
+
+       TextButton(onPressed: () {},
+         style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.red),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0)
+                )
+              ),
+          ),
+      
+          child: const Text(
+            "Follow",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
+          ),
+       ),
+          
+        ]
+      ),
+    );
+  }
+}
+
+
+
+class Ingredientsection extends StatelessWidget {
+const Ingredientsection({super.key,  required this.text_main, required this.text_sub,});
+
+
+  final String text_main;
+  final String text_sub;
+
+  @override
+  Widget build(BuildContext context) {
+     return Padding(
+       padding: const EdgeInsets.only(top:16.0),
+       child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+           children: [
+        Text(
+            text_main,
+            style: const TextStyle(
+              color: Color(0xFF000000),
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+       
+        Text(
+            text_sub,
+            style: const TextStyle(
+              color: Color(0xffA9A9A9),
+              fontSize: 16,
+            ),
+          ),
+        ],
+           ),
+     );
+  }
+}
+
 

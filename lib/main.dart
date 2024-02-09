@@ -33,10 +33,16 @@ class MyApp extends StatelessWidget {
               child: Column(
                 children: [
                   Topicsection(topic: "How to make french Toast"),
+                  ImageSection(
+                      image: "assets/images/mainimage.png",
+                      playimage: "assets/images/Playbutton.png",
+                    ),      
+                    Ratingsection(
+                      rating: 4.5,
+                      review: "(300 reviews)",
+                    ),
                  
-              
-                      
-                    ],
+                 ],
               ),
             ),
           ),
@@ -67,3 +73,89 @@ class Topicsection extends StatelessWidget {
     );
   }
 }
+
+
+
+class ImageSection extends StatelessWidget {
+  const ImageSection({
+    super.key,
+    required this.image, required this.playimage,
+  });
+
+  final String image;
+  final String playimage;
+  @override
+  Widget build(BuildContext context) {
+   return Stack(
+  children: [
+    ClipRRect(
+      borderRadius: BorderRadius.circular(20.0),
+      child: Image.asset(
+      image,
+      width: 600,
+      height: 250,
+      fit: BoxFit.cover,
+    )
+    ),
+
+    Positioned.fill(
+      child: Align(
+        alignment: Alignment.center,
+         child: Image.asset(
+      playimage,
+      width: 64,
+      height: 64,
+      fit: BoxFit.cover,
+    )
+      ),
+    ),
+  ],
+);
+  }
+}
+
+
+
+class Ratingsection extends StatelessWidget {
+  const Ratingsection({
+    super.key, required this.rating, required this.review,
+  });
+
+  final double rating;
+  final String review;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top:16.0),
+      child: Row(
+          children: [
+            const Icon(
+                Icons.star,
+                color: Colors.yellow,
+              ),
+            
+            Padding(
+              padding: const EdgeInsets.only(right:8.0),
+              child: Text(
+                "$rating", 
+              style: const TextStyle(
+                    fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                    ),
+                    ),
+            ),
+           Text(review,
+            style: const TextStyle(
+                color: Color.fromARGB(255, 134, 133, 133),
+                  fontSize: 16,
+                ),
+        
+        ),
+          ],
+        ),
+    );
+    
+  }
+}
+

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 
 
-class Ingredientsection extends StatelessWidget {
-const Ingredientsection({super.key,  required this.text_main, required this.text_sub,});
+class IngredientSection extends StatelessWidget {
+const IngredientSection({super.key,  required this.text_main, required this.text_sub,});
 
 
   final String text_main;

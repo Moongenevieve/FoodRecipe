@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 
 
-class Ratingsection extends StatelessWidget {
-  const Ratingsection({
+class RatingSection extends StatelessWidget {
+  const RatingSection({
     super.key, required this.rating, required this.review,
   });
 
@@ -24,16 +24,17 @@ class Ratingsection extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right:8.0),
               child: Text(
-                "$rating", 
-              style: const TextStyle(
+                    "$rating", 
+                style: const TextStyle(
                     fontWeight: FontWeight.w700,
-                      fontSize: 16,
+                    fontSize: 16,
                     ),
                     ),
             ),
-           Text(review,
+           Text(
+            review,
             style: const TextStyle(
-                color: Color.fromARGB(255, 134, 133, 133),
+                  color: Color(0xffA9A9A9),
                   fontSize: 16,
                 ),
         

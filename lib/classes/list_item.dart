@@ -58,7 +58,7 @@ class ListItem extends StatelessWidget {
             Text(
               gram,
               style: const TextStyle(
-                color: Color.fromARGB(255, 71, 71, 71),
+                color: Color(0xffA9A9A9),
                 fontSize: 14,
               ),
             ),

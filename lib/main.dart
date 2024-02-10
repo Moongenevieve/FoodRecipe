@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodrecipe/listItemSection.dart';
-import 'package:foodrecipe/classes/authorDetails.dart';
+import 'package:foodrecipe/list_item_section.dart';
+import 'package:foodrecipe/classes/author_details.dart';
 import 'package:foodrecipe/classes/image.dart';
 import 'package:foodrecipe/classes/ingredient.dart';
 import 'package:foodrecipe/classes/rating.dart';
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                 child: Column(
                   children: [
                     
-                    Topicsection(topic: "How to make french Toast"),
+                    TopicSection(topic: "How to make french Toast"),
                     SizedBox(
                         height: 15,
                       ),
@@ -51,18 +51,18 @@ class MyApp extends StatelessWidget {
                     ),
                             
                             
-                    Ratingsection(
+                    RatingSection(
                       rating: 4.5,
                       review: "(300 reviews)",
                     ),
-                    Authordetailssection(
+                    AuthorDetailsSection(
                       image: "assets/images/user.png",
                       name: "Kimmy Bella",
                       location: "Winchester, Manch",
                       image_location: "assets/images/Location.png",
                       ),
                     
-                      Ingredientsection(
+                      IngredientSection(
                         text_main: "Ingredients",
                         text_sub: "5 items",
                       ),

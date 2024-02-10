@@ -77,5 +77,10 @@ Ingredients List:
 Finally, the list of ingredients and their quantities in grams is presented.
 
 
-
+ I Carefully selected from these colors listed below:
+    -  A9A9A9
+    -  000000
+    -  303030
+    -  E23E3E
+i replaced A9A9A9 with E5E5E5 because  A9A9A9 did not quite match the design. 
 ## Screenshot of the final project

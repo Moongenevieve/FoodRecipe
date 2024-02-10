@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 
 
-class Authordetailssection extends StatelessWidget {
-  const Authordetailssection(
+class AuthorDetailsSection extends StatelessWidget {
+  const AuthorDetailsSection(
       {super.key,
       required this.image,
       required this.name,
@@ -73,7 +73,7 @@ class Authordetailssection extends StatelessWidget {
 
        TextButton(onPressed: () {},
          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.red),
+              backgroundColor: MaterialStateProperty.all(Color(0xffe23e3e)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)

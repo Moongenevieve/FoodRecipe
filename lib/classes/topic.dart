@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Topicsection extends StatelessWidget {
-  const Topicsection({
+class TopicSection extends StatelessWidget {
+  const TopicSection({
     super.key,
     required this.topic,
   });

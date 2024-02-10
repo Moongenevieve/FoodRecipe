@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:foodrecipe/listItemSection.dart';
+import 'package:foodrecipe/classes/authorDetails.dart';
+import 'package:foodrecipe/classes/image.dart';
+import 'package:foodrecipe/classes/ingredient.dart';
+import 'package:foodrecipe/classes/rating.dart';
+import 'package:foodrecipe/classes/topic.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -21,10 +29,10 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(
             leading: IconButton(onPressed: (){}, 
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
             actions: [
            IconButton(onPressed: (){}, 
-           icon: Icon(Icons.more_horiz)),
+           icon: const Icon(Icons.more_horiz)),
             ],
           ),
           body: const SingleChildScrollView(
@@ -59,254 +67,18 @@ class MyApp extends StatelessWidget {
                         text_sub: "5 items",
                       ),
                 
+                
+                     ListItemSection(),
+                
+                      
+                
+                        
                       ],
                 ),
               ),
             ),
-        
-
       ),
-      
-        );
-        
-  }
-}
-
-
-class Topicsection extends StatelessWidget {
-  const Topicsection({
-    super.key,
-    required this.topic,
-  });
-
-  final String topic;
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      topic,
-      style: const TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-        color: Color(0xff000000)
-      ),
-    );
-  }
-}
-
-
-class ImageSection extends StatelessWidget {
-  const ImageSection({
-    super.key,
-    required this.image, required this.playimage,
-  });
-
-  final String image;
-  final String playimage;
-  @override
-  Widget build(BuildContext context) {
-   return Stack(
-  children: [
-    ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset(
-      image,
-      width: 600,
-      height: 250,
-      fit: BoxFit.cover,
-    )
-    ),
-
-    Positioned.fill(
-      child: Align(
-        alignment: Alignment.center,
-         child: Image.asset(
-      playimage,
-      width: 64,
-      height: 64,
-      fit: BoxFit.cover,
-    )
-      ),
-    ),
-  ],
-);
-  }
-}
-
-
-
-class Ratingsection extends StatelessWidget {
-  const Ratingsection({
-    super.key, required this.rating, required this.review,
-  });
-
-  final double rating;
-  final String review;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top:16.0),
-      child: Row(
-          children: [
-            const Icon(
-                Icons.star,
-                color: Colors.yellow,
-              ),
-            
-            Padding(
-              padding: const EdgeInsets.only(right:8.0),
-              child: Text(
-                "$rating", 
-              style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                    ),
-                    ),
-            ),
-           Text(review,
-            style: const TextStyle(
-                color: Color.fromARGB(255, 134, 133, 133),
-                  fontSize: 16,
-                ),
-        
-        ),
-          ],
-        ),
-    );
-    
-  }
-}
-
-
-class Authordetailssection extends StatelessWidget {
-  const Authordetailssection(
-      {super.key,
-      required this.image,
-      required this.name,
-      required this.location,
-      required this.image_location});
-
-  final String image;
-  final String name;
-  final String location;
-  final String image_location;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          ClipOval( 
-                  child: Image.asset(
-                        image,
-                        width: 40,
-                        height: 40,
-                        fit: BoxFit.cover,
-                      ),
-                      ),
-               
-          Column(
-            
-              children: [
-                Text(
-                  name,
-                  style: const TextStyle(
-                   fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    ),
-                ),
-      
-                 Padding(
-                   padding: const EdgeInsets.only(left:24.0),
-                   child: Row (children: [
-                       Image.asset(
-                        image_location,
-                        // width: 20,
-                        // height: 20,
-                        fit: BoxFit.contain,
-                              ),
-                             
-                                   Text(
-                          location,
-                          style: const TextStyle(
-                            
-                        fontWeight: FontWeight.normal, 
-                        fontSize: 12,
-                        color: Colors.grey,
-                            ),
-                        ),
-                             
-                    ],
-                    
-                    ),
-                 ),
-      
-              ],
-          
-          ),
-        const Spacer(),
-
-       TextButton(onPressed: () {},
-         style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.red),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0)
-                )
-              ),
-          ),
-      
-          child: const Text(
-            "Follow",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-            ),
-          ),
-       ),
-          
-        ]
-      ),
-    );
-  }
-}
-
-
-
-class Ingredientsection extends StatelessWidget {
-const Ingredientsection({super.key,  required this.text_main, required this.text_sub,});
-
-
-  final String text_main;
-  final String text_sub;
-
-  @override
-  Widget build(BuildContext context) {
-     return Padding(
-       padding: const EdgeInsets.only(top:16.0),
-       child: Row(
-           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           children: [
-        Text(
-            text_main,
-            style: const TextStyle(
-              color: Color(0xFF000000),
-              fontSize: 22,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-       
-        Text(
-            text_sub,
-            style: const TextStyle(
-              color: Color(0xffA9A9A9),
-              fontSize: 16,
-            ),
-          ),
-        ],
-           ),
-     );
+        ); 
   }
 }
 

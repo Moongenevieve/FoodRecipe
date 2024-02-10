@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 class ImageSection extends StatelessWidget {
   const ImageSection({
     super.key,
-    required this.image, required this.playimage,
+    required this.image, required this.playImage,
   });
 
   final String image;
-  final String playimage;
+  final String playImage;
   @override
   Widget build(BuildContext context) {
    return Stack(
@@ -29,7 +29,7 @@ class ImageSection extends StatelessWidget {
       child: Align(
         alignment: Alignment.center,
          child: Image.asset(
-      playimage,
+      playImage,
       width: 64,
       height: 64,
       fit: BoxFit.cover,

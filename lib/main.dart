@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
                       ),
                    ImageSection(
                       image: "assets/images/mainimage.png",
-                      playimage: "assets/images/Playbutton.png",
+                      playImage: "assets/images/Playbutton.png",
                     ),
                             
                             
@@ -59,12 +59,12 @@ class MyApp extends StatelessWidget {
                       image: "assets/images/user.png",
                       name: "Kimmy Bella",
                       location: "Winchester, Manch",
-                      image_location: "assets/images/Location.png",
+                      imageLocation: "assets/images/Location.png",
                       ),
                     
                       IngredientSection(
-                        text_main: "Ingredients",
-                        text_sub: "5 items",
+                        textMain: "Ingredients",
+                        textSub: "5 items",
                       ),
                 
                 

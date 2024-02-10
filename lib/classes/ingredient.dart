@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 
 class IngredientSection extends StatelessWidget {
-const IngredientSection({super.key,  required this.text_main, required this.text_sub,});
+const IngredientSection({super.key,  required this.textMain, required this.textSub,});
 
 
-  final String text_main;
-  final String text_sub;
+  final String textMain;
+  final String textSub;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ const IngredientSection({super.key,  required this.text_main, required this.text
            mainAxisAlignment: MainAxisAlignment.spaceBetween,
            children: [
         Text(
-            text_main,
+            textMain,
             style: const TextStyle(
               color: Color(0xFF000000),
               fontSize: 22,
@@ -27,7 +27,7 @@ const IngredientSection({super.key,  required this.text_main, required this.text
           ),
        
         Text(
-            text_sub,
+            textSub,
             style: const TextStyle(
               color: Color(0xffA9A9A9),
               fontSize: 16,

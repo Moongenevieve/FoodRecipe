@@ -8,12 +8,12 @@ class AuthorDetailsSection extends StatelessWidget {
       required this.image,
       required this.name,
       required this.location,
-      required this.image_location});
+      required this.imageLocation});
 
   final String image;
   final String name;
   final String location;
-  final String image_location;
+  final String imageLocation;
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +42,10 @@ class AuthorDetailsSection extends StatelessWidget {
                 ),
       
                  Padding(
-                   padding: const EdgeInsets.only(left:24.0),
+                   padding: const EdgeInsets.only(left:32.0),
                    child: Row (children: [
                        Image.asset(
-                        image_location,
+                        imageLocation,
                         // width: 20,
                         // height: 20,
                         fit: BoxFit.contain,

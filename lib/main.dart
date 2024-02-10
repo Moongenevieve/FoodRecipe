@@ -49,16 +49,23 @@ class MyApp extends StatelessWidget {
                       image: "assets/images/mainimage.png",
                       playImage: "assets/images/Playbutton.png",
                     ),
-                            
+                     SizedBox(
+                        height: 12,
+                      ),       
                             
                     RatingSection(
                       rating: 4.5,
                       review: "(300 reviews)",
                     ),
+
+                    SizedBox(
+                        height: 10,
+                      ),
+                      
                     AuthorDetailsSection(
                       image: "assets/images/user.png",
-                      name: "Kimmy Bella",
-                      location: "Winchester, Manch",
+                      name: "Roberta Anny",
+                      location: "Bali, Indonesia",
                       imageLocation: "assets/images/Location.png",
                       ),
                     

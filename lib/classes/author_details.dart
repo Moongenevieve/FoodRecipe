@@ -29,6 +29,10 @@ class AuthorDetailsSection extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                       ),
+
+          const SizedBox(
+             width: 12,
+              ),
                
           Column(
             
@@ -41,9 +45,7 @@ class AuthorDetailsSection extends StatelessWidget {
                     ),
                 ),
       
-                 Padding(
-                   padding: const EdgeInsets.only(left:32.0),
-                   child: Row (children: [
+                Row (children: [
                        Image.asset(
                         imageLocation,
                         // width: 20,
@@ -64,7 +66,7 @@ class AuthorDetailsSection extends StatelessWidget {
                     ],
                     
                     ),
-                 ),
+                 
       
               ],
           
@@ -85,7 +87,7 @@ class AuthorDetailsSection extends StatelessWidget {
             "Follow",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: 12,
             ),
           ),
        ),

@@ -12,7 +12,7 @@ This Flutter project is aimed at providing a solution for the UI of a food recip
 - Rating section
 - List item section
 
-### description of your project
+### Description
 
 This project aims to create a structured blog post design consisting of various sections:
 

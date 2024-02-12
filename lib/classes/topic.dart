@@ -12,10 +12,7 @@ class TopicSection extends StatelessWidget {
     return Text(
       topic,
       style: const TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.w700,
-        color: Color(0xff000000)
-      ),
+          fontSize: 30, fontWeight: FontWeight.w700, color: Color(0xff000000)),
     );
   }
 }
